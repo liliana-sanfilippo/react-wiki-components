@@ -1,4 +1,5 @@
 export * from "./Sidebar/Section"
+export * from "./NotFound/NotFound"
 export * from "./Sidebar/Subsection"
 export * from "./Sidebar/Sidebar"
 export * from "./BackToTopButton/BackToTopButton"
