@@ -33,5 +33,9 @@
     "typescript": "^5.4.0",
     "vite": "^5.0.0",
     "vitest": "^1.2.0"
+  },
+  "dependencies": {
+    "@liliana-sanfilippo/react-link": "^0.0.2",
+    "react-router-dom": "^6.26.0"
   }
 }

@@ -1,0 +1,11 @@
+import {stringToSlug} from "../utils/stringToSlug";
+
+export function Section({title, children}: {title: string, children: React.ReactNode}){
+    let id = stringToSlug(title);
+    return(
+            <section id={id} className="section">
+                <h1 id={`${id}H`} className="section-header">{title}</h1>
+                {children}
+            </section>
+    )
+}

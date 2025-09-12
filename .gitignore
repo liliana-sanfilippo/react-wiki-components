@@ -1,3 +1,5 @@
 /.idea/
 /node_modules
 package-lock.json
+/dist
+/liliana-sanfilippo-react-wiki-components-0.0.1.tgz
