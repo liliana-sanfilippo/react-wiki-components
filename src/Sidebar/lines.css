@@ -1,0 +1,92 @@
+
+
+.section-box {
+    position: relative;
+    width: 100%;
+    padding-top: 48px;
+    padding-left: 48px;
+    padding-right: 48px;
+    padding-bottom: 48px;
+}
+
+/* Content and positioning */
+
+.section-box::after, .section-box::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+}
+
+/* Line colors */
+
+.section-box::after {
+    border-color: var(--accentOne) !important;
+}
+
+.section-box::before {
+    border-color: var(--accentTwo) !important;
+}
+
+
+/* LINES */
+
+.section-box:first-child::after {
+    border-top: 0px !important;
+}
+
+.section-box:first-child::before {
+    border-top: 0px !important;
+}
+
+.section-box:nth-child(3n +1)::after {
+    top: 24px;
+    left: -24px;
+    right: 0px;
+    bottom: -24px;
+    border-left: 1px dashed;
+    border-top: 1px dashed;
+    border-bottom: 1px dashed;
+}
+
+.section-box:nth-child(3n +2)::after {
+    top: 24px;
+    left: -24px;
+    right: 0px;
+    bottom: -24px;
+    border-right: 1px dashed;
+}
+
+.section-box:nth-child(3n)::after {
+    top: 24px;
+    left: -24px;
+    right: 0px;
+    bottom: -24px;
+    border-right: 1px dashed;
+}
+
+.section-box:nth-child(3n +1)::before {
+    top: 0px;
+    left: 12px;
+    right: -24px;
+    bottom: -24px;
+    border-top: 1px dashed;
+    border-left: 1px dashed;
+}
+
+.section-box:nth-child(3n +2)::before {
+    top: 24px;
+    left: 12px;
+    right: -24px;
+    bottom: -24px;
+    border-left: 1px dashed;
+    border-bottom: 1px dashed;
+}
+
+.section-box:nth-child(3n)::before {
+    top: 24px;
+    left: 12px;
+    right: -24px;
+    bottom: 0px;
+
+    border-right: 1px dashed;
+}
