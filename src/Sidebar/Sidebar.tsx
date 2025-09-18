@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {SidebarProps} from "../types";
 import {SidebarContent} from "./SidebarContents";
-import {getSectionHeaders} from "./getSectionGeaders";
+import {getSectionHeaders} from "./getSectionHeaders";
 import {BackUp} from "../BackToTopButton/BackToTopButton";
 import {SidebarContents} from "./definitions";
 

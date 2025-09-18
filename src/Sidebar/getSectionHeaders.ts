@@ -18,11 +18,13 @@ export function getSectionHeaders(): SidebarContents[] {
                 header: header_text,
                 subheaders: subheader_text_list
             };
-        } else {
+        } else if  (header_text.length > 0){
             sidebar_content = {
                 header: header_text
             };
-        };
+        } else {
+            return null;
+        }
         elements.push(sidebar_content);
     });
 
