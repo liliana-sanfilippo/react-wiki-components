@@ -9,7 +9,7 @@ import {highlightSection} from "./highlightSections";
 
 /**
  * Function that creates the contents of the sidebar from a list of all the sections with their respective subsections.
- * @param sidebarContents  list of all the sections with their respective subsections
+ * @param sidebarContents  list of all the sections titles with their respective subsection titles
  * @constructor
  */
 export function SidebarContent({sidebarContents }: { sidebarContents: SidebarContents[]}) {
@@ -70,8 +70,8 @@ export function SidebarContent({sidebarContents }: { sidebarContents: SidebarCon
         <>
             <br/>
         <nav className="sidebar">
-            {sidebarContents.map((content, content_index) => {
-                    let content_header_slug = stringToSlug(content.header);
+            {sidebarContents.map((content: SidebarContents, content_index: number) => {
+                    let content_header_slug: string = stringToSlug(content.header);
                     const sidebar_tabId = `tab-${content_header_slug}`;
                     const sidebar_parentId = `parent-${content_header_slug}`;
                     const sidebar_sectionId = `sidebar-section${content_index}`;
@@ -85,8 +85,8 @@ export function SidebarContent({sidebarContents }: { sidebarContents: SidebarCon
                         onClick={() => {
                         toggleSidebarSection(content_header_slug);
                         goToPlace({path: url, scrollToId: `${content_header_slug}H`});
-                        sidebarContents.forEach((sb_content) => {
-                            let sb_content_slug = stringToSlug(sb_content.header);
+                        sidebarContents.forEach((sb_content: SidebarContents) => {
+                            let sb_content_slug: string = stringToSlug(sb_content.header);
                             if (sb_content_slug !== content_header_slug) {
                                 document.getElementById(`tab-${sb_content_slug}`)!.style.display = "none";
 
@@ -107,7 +107,7 @@ export function SidebarContent({sidebarContents }: { sidebarContents: SidebarCon
                             {content.subheaders.map((subheader: string) => {
                                     const sidebar_subheader_id = `sidebar-subsection${subsection_number}`;
                                     subsection_number = subsection_number + 1;
-                                    let subheader_slug: string = `${stringToSlug(subheader)}H`;
+                                    let subheader_slug: string = `${stringToSlug(content_header_slug + "-" + subheader)}H`;
                                     return (
                                         <li key={subsection_number} id={sidebar_subheader_id}>
                                     <a
