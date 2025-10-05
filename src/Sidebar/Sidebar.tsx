@@ -7,7 +7,9 @@ import {SidebarContents} from "./definitions";
 
 export const Sidebar: React.FC<SidebarProps>= ({backToTopButton})=> {
     const [state_header, set_state_header] = useState<SidebarContents[]>([]);
-
+    /**
+     * Get a list of all the section headers and subsection headers to give to the {@SidebarContent} component.
+     */
     useEffect(() => {
         set_state_header(getSectionHeaders())
     },  [])

@@ -15,7 +15,7 @@
     "build": "vite build",
     "dev": "vite",
     "test": "vitest",
-    "patch": "npm version patch && rm -rf dist && npm run build && npm pack"
+    "patch": "npm version patch && rm -rf dist && npm run build && npm pack && npm publish"
   },
   "keywords": [
     "react",

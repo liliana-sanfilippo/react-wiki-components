@@ -7,14 +7,27 @@ import {deriveTabsData} from "./deriveTabsData";
 import {hightlightSubsection} from "./highlightSubsections";
 import {highlightSection} from "./highlightSections";
 
-
+/**
+ * Function that creates the contents of the sidebar from a list of all the sections with their respective subsections.
+ * @param sidebarContents  list of all the sections with their respective subsections
+ * @constructor
+ */
 export function SidebarContent({sidebarContents }: { sidebarContents: SidebarContents[]}) {
-
-    const location = useLocation();
-    let url = `/${location.pathname.startsWith("/") ? location.pathname.slice(1) : location.pathname}`;
-
+    /**
+     * Get current location (page/path).
+     */
+    const location  = useLocation();
+    /**
+     * Get current url based on current location.
+     */
+    let url: string = `/${location.pathname.startsWith("/") ? location.pathname.slice(1) : location.pathname}`;
+    /**
+     * Use {@goToPlace} for linking.
+     */
     const {goToPlace} = useNavigation();
-
+    /**
+     * Get a list of all the section IDs and the IDs of their respective subsections.
+     */
     const {section_ids, subsection_ids } = deriveTabsData(sidebarContents);
 
     const [activeSidebarSection, setActiveSidebarSection] = useState<string | null>(null);

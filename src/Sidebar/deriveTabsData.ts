@@ -7,11 +7,13 @@ export function deriveTabsData(sidebar_contents: SidebarContents[]) {
 
     sidebar_contents.forEach((sidebar_item: SidebarContents) => {
         let count = 1;
-        section_ids.push(stringToSlug(sidebar_item.header));
+        // sectionTitle + "-" + title
+        const section_id = stringToSlug(sidebar_item.header);
+        section_ids.push(section_id);
         if (sidebar_item.subheaders) {
             sidebar_item.subheaders.forEach((index) => {
 
-                subsection_ids.push(stringToSlug(index));
+                subsection_ids.push(stringToSlug(section_id + "-" + index));
                 count += 1;
             });
         }
