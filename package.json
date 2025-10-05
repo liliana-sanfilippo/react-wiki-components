@@ -14,7 +14,8 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "test": "vitest"
+    "test": "vitest",
+    "patch": "npm version patch && rm -rf dist && npm run build && npm pack"
   },
   "keywords": [
     "react",
