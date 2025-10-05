@@ -91,10 +91,10 @@ export function SidebarContent({sidebarContents }: { sidebarContents: SidebarCon
                         style={{ display: activeSidebarSection === content_header_slug ? "block" : "none" }}
                     >
                         <ul>
-                            {content.subheaders.map((subheader) => {
+                            {content.subheaders.map((subheader: string) => {
                                     const sidebar_subheader_id = `sidebar-subsection${subsection_number}`;
                                     subsection_number = subsection_number + 1;
-                                    let subheader_slug = `${stringToSlug(subheader)}H`;
+                                    let subheader_slug: string = `${stringToSlug(subheader)}H`;
                                     return (
                                         <li key={subsection_number} id={sidebar_subheader_id}>
                                     <a

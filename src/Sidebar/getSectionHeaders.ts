@@ -1,15 +1,26 @@
 import {SidebarContents} from "./definitions";
 
 export function getSectionHeaders(): SidebarContents[] {
+    /**
+     * Initialise empty list of SidebarContents.
+     */
     let elements: SidebarContents[] = new Array<SidebarContents>;
-    const section_html_elements = document.querySelectorAll<HTMLElement>('.section');
-    console.log(section_html_elements.length)
-    section_html_elements.forEach( (section) => {
+    /**
+     * Get all Section-HTML-Elements from the page.
+     */
+    const section_html_elements: NodeListOf<HTMLElement> = document.querySelectorAll<HTMLElement>('.section');
+    /**
+     * Iterate through all Section-HTML-Elements of the page
+     */
+    section_html_elements.forEach( (section: HTMLElement) => {
+        /**
+         * Initialise an empty list to collect the subheader titles.
+         */
         let subheader_text_list: string[] = []
-        const header_text: string = section.querySelector<HTMLElement>(".section-header")?.innerText ?? "UNDEFINED";
+        const header_text: string = section.querySelector<HTMLElement>(".section-header")?.id ?? "UNDEFINED";
         const subsection_html_elements = section.querySelectorAll<HTMLElement>(".subsection");
         subsection_html_elements.forEach((subsection) => {
-            const subheader_text: string = subsection.querySelector<HTMLElement>(".subsection-header")?.innerText ?? "UNDEFINED";
+            const subheader_text: string = subsection.querySelector<HTMLElement>(".subsection-header")?.id ?? "UNDEFINED";
             subheader_text_list.push(subheader_text);
         });
         let sidebar_content: SidebarContents;
