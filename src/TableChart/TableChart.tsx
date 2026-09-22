@@ -4,7 +4,7 @@ import {CellValue, TableRow} from "./definitions";
 import {TableColumn} from "./TableColumn";
 
 
-const TableChart: React.FC<TableChartProps> = ({
+export const TableChart: React.FC<TableChartProps> = ({
                                                    headers,
                                                    rows,
                                                    headerPosition = "top",
@@ -725,5 +725,3 @@ const TableChart: React.FC<TableChartProps> = ({
         );
     }
 };
-
-export default TableChart;
