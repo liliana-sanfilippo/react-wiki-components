@@ -2,10 +2,12 @@
   "name": "@liliana-sanfilippo/react-wiki-components",
   "version": "0.0.12",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liliana-sanfilippo/react-wiki-components.git"
+  },
   "publishConfig": {
-    "access": "public",
-    "url": "https://github.com/liliana-sanfilippo/react-wiki-components",
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
