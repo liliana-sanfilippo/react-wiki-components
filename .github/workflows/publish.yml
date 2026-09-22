@@ -23,9 +23,10 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: "24"
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@liliana-sanfilippo"
       - run: npm ci
       - run: npm run build
-      - uses: JS-DevTools/npm-publish@v4
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          registry: "https://npm.pkg.github.com"
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
